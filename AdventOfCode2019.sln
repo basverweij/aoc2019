@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Day 01", "Day 01", "{6691A465-C55F-4CA9-8C8E-7C7393F9E0F6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode2019.Day01", "AdventOfCode2019.Day01\AdventOfCode2019.Day01.csproj", "{160C811D-AC0C-41D7-B00D-12090A7D5830}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{63489F79-D686-4628-97A4-84E1135567A8}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{160C811D-AC0C-41D7-B00D-12090A7D5830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{160C811D-AC0C-41D7-B00D-12090A7D5830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{160C811D-AC0C-41D7-B00D-12090A7D5830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{160C811D-AC0C-41D7-B00D-12090A7D5830}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{160C811D-AC0C-41D7-B00D-12090A7D5830} = {6691A465-C55F-4CA9-8C8E-7C7393F9E0F6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8997EBF4-5515-4971-9044-7A85D37C7A2A}
+	EndGlobalSection
+EndGlobal
