@@ -2,7 +2,7 @@ using NUnit.Framework;
 
 namespace AdventOfCode2019.Day02.Tests
 {
-    public class Tests
+    public class Puzzle1
     {
         public static object[][] Programs =
         {

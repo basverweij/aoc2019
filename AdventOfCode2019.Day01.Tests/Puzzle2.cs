@@ -2,7 +2,7 @@ using NUnit.Framework;
 
 namespace AdventOfCode2019.Day01.Tests
 {
-    public class Tests
+    public class Puzzle2
     {
         [Test]
         [TestCase(14, 2)]
