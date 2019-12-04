@@ -10,6 +10,8 @@ namespace AdventOfCode2019.Day03
         static void Main(string[] args)
         {
             Puzzle1();
+
+            Puzzle2();
         }
 
         private static void Puzzle1()
@@ -24,13 +26,38 @@ namespace AdventOfCode2019.Day03
 
             var points2 = DrawLine(line2);
 
-            points1.IntersectWith(points2);
+            var intersections = new HashSet<(int x, int y)>(points1.Keys);
 
-            var closestDistance = points1
-                .Select(p => Distance(p.Item1, p.Item2))
+            intersections.IntersectWith(points2.Keys);
+
+            var closestDistance = intersections
+                .Select(p => Distance(p.x, p.y))
                 .Min();
 
             Console.WriteLine($"Day 03 - Puzzle 1: {closestDistance}");
+        }
+
+        private static void Puzzle2()
+        {
+            var lines = File.ReadAllLines("input1.txt");
+
+            var line1 = ParseLine(lines[0]);
+
+            var line2 = ParseLine(lines[1]);
+
+            var points1 = DrawLine(line1);
+
+            var points2 = DrawLine(line2);
+
+            var intersections = new HashSet<(int x, int y)>(points1.Keys);
+
+            intersections.IntersectWith(points2.Keys);
+
+            var shortestLength = intersections
+                .Select(p => points1[p] + points2[p])
+                .Min()  ;
+
+            Console.WriteLine($"Day 03 - Puzzle 1: {shortestLength}");
         }
 
         public static Segment[] ParseLine(
@@ -42,14 +69,16 @@ namespace AdventOfCode2019.Day03
                 .ToArray();
         }
 
-        public static HashSet<(int, int)> DrawLine(
+        public static Dictionary<(int, int), int> DrawLine(
             Segment[] line)
         {
             var x = 0;
 
             var y = 0;
 
-            var points = new HashSet<(int, int)>();
+            var points = new Dictionary<(int, int), int>();
+
+            var n = 0;
 
             foreach (var segment in line)
             {
@@ -60,7 +89,12 @@ namespace AdventOfCode2019.Day03
                     {
                         x += segment.DeltaX;
 
-                        points.Add((x, y));
+                        n++;
+
+                        if (!points.ContainsKey((x, y)))
+                        {
+                            points[(x, y)] = n;
+                        }
                     }
                 }
                 else
@@ -70,7 +104,12 @@ namespace AdventOfCode2019.Day03
                     {
                         y += segment.DeltaY;
 
-                        points.Add((x, y));
+                        n++;
+
+                        if (!points.ContainsKey((x, y)))
+                        {
+                            points[(x, y)] = n;
+                        }
                     }
                 }
             }
