@@ -2,19 +2,18 @@ using NUnit.Framework;
 
 namespace AdventOfCode2019.Day04.Tests
 {
-    public class Puzzle1
+    public class Puzzle2
     {
-
         [Test]
-        [TestCase(111111, true)]
-        [TestCase(223450, false)]
-        [TestCase(123789, false)]
-        public void IsValidPassword(
+        [TestCase(112233, true)]
+        [TestCase(123444, false)]
+        [TestCase(111122, true)]
+        public void IsValidPasswordExtended(
             int password,
             bool expected)
         {
             Assert.That(
-                Program.IsValidPassword(password),
+                Program.IsValidPasswordExtended(password),
                 Is.EqualTo(expected));
         }
     }
